@@ -110,11 +110,13 @@ TinyVue具有跨端、跨框架的企业级UI组件库特点，同时支持多�
 
 # 如何使用Mobile-First多端模板（一）
 
-#### 安装tailwind相关插件
+#### 安装多端相关工具包
 
 ```bash
 # 安装tailwind及插件
 npm i tailwindcss tailwind-merge postcss --legacy-peer-deps
+# 安装saas主题包和图标
+npm i @opentiny/vue-theme-saas @opentiny/vue-icon-saas
 ```
 
 #### 配置 tailwind.config.cjs
@@ -122,7 +124,6 @@ npm i tailwindcss tailwind-merge postcss --legacy-peer-deps
 ```js
 /** @type { import('tailwindcss').Config } */
 const config = require('@opentiny/vue-theme-saas/tailwind.config.js')
-
 module.exports = {
   content: [
     './src/**/*.{html,js,vue}',
@@ -145,7 +146,6 @@ module.exports = {
 #### 新增postcss.config.cjs
 
 ```js
-// postcss.config.cjs
 module.exports = {
   plugins: {
     tailwindcss: {}, 
@@ -162,14 +162,39 @@ module.exports = {
 @tailwind utilities;
 ```
 
-### 在入口文件引入并全局切换为 `mobile-first` 模式
+#### 在入口文件引入并全局切换为 `mobile-first` 模式
 
 ```js
 // main.js
+import { customDesignConfig } from '@opentiny/vue-common'
+import { twMerge } from 'tailwind-merge'
 import "./tailwind.css";
-
+// 适配层集成twMerge能力
+customDesignConfig.twMerge = twMerge
 app.config.globalProperties.tiny_mode = { value: 'mobile-first' }
 
+```
+
+---
+
+# 如何使用Mobile-First多端模板(三)
+
+#### 配置 vite.config.js
+
+```js
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// <https://vite.dev/config/>
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@opentiny/vue-theme': '@opentiny/vue-theme-saas',
+      '@opentiny/vue-icon': '@opentiny/vue-icon-saas'
+    }
+  }
+})
 ```
 
 ---
@@ -179,7 +204,9 @@ app.config.globalProperties.tiny_mode = { value: 'mobile-first' }
 <div class="grid grid-cols-1 gap-x-4">
 <div>
 
-### 设计令牌定义
+#### 设计令牌定义
+
+用户可以自己配置一套适合自己的主题系统
 
 ```js
 // 设计令牌示例
