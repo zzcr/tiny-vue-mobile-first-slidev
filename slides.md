@@ -391,7 +391,7 @@ sequenceDiagram
 
 <div class="mt-12">
   <h3 class="text-xl mb-4">参考资源</h3>
-  <div class="flex justify-center gap-8">
+  <div class="flex justify-center gap-12">
     <a href="https://opentiny.design/tiny-vue" class="flex items-center gap-1 opacity-70 hover:opacity-100">
       <carbon-document class="text-lg" /> 官方文档
     </a>
@@ -400,6 +400,9 @@ sequenceDiagram
     </a>
     <a href="https://github.com/opentiny/tiny-vue-template" class="flex items-center gap-1 opacity-70 hover:opacity-100">
       <carbon-code class="text-lg" /> 多端示例源码
+    </a>
+    <a href="https://opentiny.github.io/tiny-vue-template/" class="flex items-center gap-1 opacity-70 hover:opacity-100">
+      <carbon-application-web class="text-lg" /> 多端示例预览
     </a>
   </div>
 </div>
