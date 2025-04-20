@@ -398,8 +398,8 @@ sequenceDiagram
     <a href="https://github.com/opentiny/tiny-vue" class="flex items-center gap-1 opacity-70 hover:opacity-100">
       <carbon-logo-github class="text-lg" /> 项目仓库
     </a>
-    <a href="https://github.com/opentiny/cross-framework-component" class="flex items-center gap-1 opacity-70 hover:opacity-100">
-      <carbon-code class="text-lg" /> 跨框架示例
+    <a href="https://github.com/opentiny/tiny-vue-template" class="flex items-center gap-1 opacity-70 hover:opacity-100">
+      <carbon-code class="text-lg" /> 多端示例源码
     </a>
   </div>
 </div>
