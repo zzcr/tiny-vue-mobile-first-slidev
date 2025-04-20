@@ -28,10 +28,6 @@ jobs:
           version: 9
       - name: Install deps
         run: pnpm i --no-frozen-lockfile
-      - name: Prepare site
-        run: pnpm pre
-      - name: Re Install deps
-        run: pnpm i --no-frozen-lockfile
       - name: Build site
         run: pnpm build
       - name: Setup Pages
@@ -40,10 +36,10 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./dist
-          destination: ./_site
+          destination: ./dist
       - name: Repair build artifact
         run: |
-          sudo chmod -R 777 ./_site
+          sudo chmod -R 777 ./dist
           cp ./dist/index.html ./dist/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
