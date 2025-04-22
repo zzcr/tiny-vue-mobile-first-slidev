@@ -5,7 +5,7 @@ theme: seriph
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070
 # some information about your slides (markdown enabled)
-title: TinyVue多端模板与模式切换
+title: TinyVue 多端模式分享
 info: |
   ## TinyVue多端开发与模式透传
   OpenTiny Vue组件库多端模板与模式切换功能介绍
@@ -22,7 +22,7 @@ mdc: true
 #  ogImage: https://cover.sli.dev
 ---
 
-# TinyVue多端模板与模式切换
+# TinyVue 多端模式分享
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -43,7 +43,7 @@ mdc: true
 
 ---
 
-# 目录
+## 目录
 
 <Toc maxDepth="1" />
 
